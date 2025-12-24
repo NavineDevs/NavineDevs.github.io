@@ -30,6 +30,33 @@ body {
     transform: scale(1.1);
     opacity: 0.85;
 }
+
+/* Remove default marker */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Dropdown animation */
+.details-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+details[open] .details-content {
+    max-height: 200px;
+    opacity: 1;
+}
+
+/* Arrow rotation */
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+details[open] .arrow {
+    transform: rotate(180deg);
+}
 </style>
 </head>
 
@@ -40,83 +67,108 @@ body {
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-        <!-- PERSON -->
+        <!-- CARD -->
         <details class="card p-6">
-            <summary class="flex flex-col items-center space-y-4 cursor-pointer list-none">
-                <img src="https://cdn.discordapp.com/avatars/1289315440392405008/93131d0dfe62e6d44ede8a1be6d4cbc9.png?size=1024" class="rounded-full border-4 border-black">
+            <summary class="flex flex-col items-center space-y-4 list-none">
+                <img src="https://cdn.discordapp.com/avatars/1289315440392405008/93131d0dfe62e6d44ede8a1be6d4cbc9.png?size=1024"
+                     class="rounded-full border-4 border-black">
                 <h2 class="text-2xl font-bold">Zach</h2>
                 <p class="text-sm opacity-80">Founder</p>
 
-                <!-- ALWAYS VISIBLE CONTACT -->
+                <!-- Always visible -->
                 <div class="flex gap-6">
-                    <a href="https://discord.com/users/1289315440392405008" title="Discord">
+                    <a href="https://discord.com/users/1289315440392405008">
                         <img src="discord.png" class="icon" alt="Discord">
-                        <p> Discord </p>
+                        <p>Discord</p>
                     </a>
-                    <a href="mailto:zach@navine.dev" title="Email">
+                    <a href="mailto:zach@navine.dev">
                         <img src="email.png" class="icon" alt="Email">
-                        <p> Email </p>
+                        <p>Email</p>
                     </a>
                 </div>
 
-                <span class="text-xs opacity-70">More contact options ▾</span>
+                <!-- TOGGLE BUTTON -->
+                <button type="button"
+                        class="flex items-center gap-2 text-xs opacity-70 mt-2 toggle-btn">
+                    More contact options
+                    <svg class="arrow w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <path d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
             </summary>
 
-            <!-- DROPDOWN (EMPTY FOR NOW) -->
-            <div class="mt-4 flex justify-center gap-6">
-                <!-- Add more contact icons here later -->
+            <div class="details-content mt-4 flex justify-center gap-6">
+                <a href="#" class="hover:underline">GitHub</a>
+                <a href="#" class="hover:underline">Twitter</a>
             </div>
         </details>
 
-        <!-- PERSON -->
+        <!-- CARD -->
         <details class="card p-6">
-            <summary class="flex flex-col items-center space-y-4 cursor-pointer list-none">
-                <img src="https://cdn.discordapp.com/avatars/1114586353116647444/f4920425d2f8df15f73ad8eb0e164c8f.png?size=1024" class="rounded-full border-4 border-black">
+            <summary class="flex flex-col items-center space-y-4 list-none">
+                <img src="https://cdn.discordapp.com/avatars/1114586353116647444/f4920425d2f8df15f73ad8eb0e164c8f.png?size=1024"
+                     class="rounded-full border-4 border-black">
                 <h2 class="text-2xl font-bold">HitBoyXx23</h2>
                 <p class="text-sm opacity-80">Co Founder</p>
 
                 <div class="flex gap-6">
                     <a href="https://discord.com/users/1114586353116647444">
                         <img src="discord.png" class="icon" alt="Discord">
-                        <p> Discord </p>
+                        <p>Discord</p>
                     </a>
                     <a href="mailto:hitboyxx23@navine.dev">
                         <img src="email.png" class="icon" alt="Email">
-                        <p> Email </p>
+                        <p>Email</p>
                     </a>
                 </div>
 
-                <span class="text-xs opacity-70">More contact options ▾</span>
+                <button type="button"
+                        class="flex items-center gap-2 text-xs opacity-70 mt-2 toggle-btn">
+                    More contact options
+                    <svg class="arrow w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <path d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
             </summary>
 
-            <div class="mt-4 flex justify-center gap-6">
-                <!-- Future contact methods -->
+            <div class="details-content mt-4 flex justify-center gap-6">
+                <a href="#" class="hover:underline">LinkedIn</a>
             </div>
         </details>
 
-        <!-- PERSON -->
+        <!-- CARD -->
         <details class="card p-6">
-            <summary class="flex flex-col items-center space-y-4 cursor-pointer list-none">
-                <img src="https://cdn.discordapp.com/avatars/1041030537407647765/716dd043df638d54b6185a3bd16c9169.png?size=1024" class="rounded-full border-4 border-black">
+            <summary class="flex flex-col items-center space-y-4 list-none">
+                <img src="https://cdn.discordapp.com/avatars/1041030537407647765/716dd043df638d54b6185a3bd16c9169.png?size=1024"
+                     class="rounded-full border-4 border-black">
                 <h2 class="text-2xl font-bold">Ben</h2>
                 <p class="text-sm opacity-80">Extra</p>
 
                 <div class="flex gap-6">
                     <a href="https://discord.com/users/1041030537407647765">
                         <img src="discord.png" class="icon" alt="Discord">
-                    </p> Discord </p>
+                        <p>Discord</p>
                     </a>
                     <a href="mailto:chris@example.com">
                         <img src="email.png" class="icon" alt="Email">
-                        </p> Email </p>
+                        <p>Email</p>
                     </a>
                 </div>
 
-                <span class="text-xs opacity-70">More contact options ▾</span>
+                <button type="button"
+                        class="flex items-center gap-2 text-xs opacity-70 mt-2 toggle-btn">
+                    More contact options
+                    <svg class="arrow w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <path d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
             </summary>
 
-            <div class="mt-4 flex justify-center gap-6">
-                <!-- Future contact methods -->
+            <div class="details-content mt-4 flex justify-center gap-6">
+                <a href="#" class="hover:underline">Website</a>
             </div>
         </details>
 
@@ -126,6 +178,25 @@ body {
         ← Back Home
     </a>
 </div>
+
+<script>
+const details = document.querySelectorAll("details");
+
+document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const parent = btn.closest("details");
+
+        details.forEach(d => {
+            if (d !== parent) d.removeAttribute("open");
+        });
+
+        parent.toggleAttribute("open");
+    });
+});
+</script>
 
 </body>
 </html>
