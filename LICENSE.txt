@@ -79,7 +79,7 @@ materials, or social media, is strictly prohibited.
 
 You may use Navine Assets solely for:
 - Personal use
-- Informational or non-commercial reference
+- Promote Navine
 - Explicitly authorized interactions
 
 All use must comply with applicable local, national, and
@@ -99,6 +99,7 @@ you may NOT:
 - Use Navine Assets for commercial, enterprise, or monetized purposes
 - Interfere with, exploit, or abuse Navine infrastructure or services
 - Engage in illegal, abusive, deceptive, or malicious activities
+- Unauthorized resale of Navine is prohibited. All sales must be conducted by official Navine representatives.
 
 --------------------------------------------------
 5. COMMERCIAL LICENSING
